@@ -191,7 +191,7 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="Simeozani Investments"
-                className="h-16 w-auto object-contain opacity-70"
+                className="h-45 w-auto object-contain opacity-70"
               />
             </div>
             <h1

@@ -131,7 +131,7 @@ export default function Hero() {
         style={{ transformOrigin: "center center" }}
       >
         <Image
-          src="/hero.jpg"
+          src="/hero.png"
           alt="Open-pit mine aerial view"
           fill
           priority
