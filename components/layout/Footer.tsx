@@ -10,6 +10,10 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
+// Brand blue
+const PRIMARY = "#0D47A1";
+const PRIMARY_LIGHT = "#4d7cc7";
+
 const companyLinks = [
   "About Us",
   "Our Vision",
@@ -42,7 +46,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <div className="space-y-8">
               <div>
-                <p className="font-mono text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "#a5b8ff" }}>
+                <p className="font-mono text-xs tracking-[0.2em] uppercase mb-4" style={{ color: PRIMARY }}>
                   Simeozani Investments
                 </p>
                 <h2 className="font-space text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
@@ -63,7 +67,7 @@ export default function Footer() {
                       background: "rgba(255,255,255,0.05)",
                       border: "1px solid rgba(255,255,255,0.1)",
                     }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "rgba(91,127,255,0.2)")}
+                    onMouseEnter={e => (e.currentTarget.style.background = `${PRIMARY}20`)}
                     onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.05)")}
                   >
                     <Icon size={14} />
@@ -76,7 +80,7 @@ export default function Footer() {
           {/* MIDDLE — Links */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-10">
             <div>
-              <h3 className="font-mono text-xs tracking-[0.2em] uppercase mb-6" style={{ color: "#a5b8ff" }}>
+              <h3 className="font-mono text-xs tracking-[0.2em] uppercase mb-6" style={{ color: PRIMARY }}>
                 Company
               </h3>
               <ul className="space-y-3">
@@ -93,7 +97,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="font-mono text-xs tracking-[0.2em] uppercase mb-6" style={{ color: "#a5b8ff" }}>
+              <h3 className="font-mono text-xs tracking-[0.2em] uppercase mb-6" style={{ color: PRIMARY }}>
                 Sectors
               </h3>
               <ul className="space-y-3">
@@ -115,7 +119,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <div className="space-y-6">
               <div>
-                <p className="font-mono text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "#a5b8ff" }}>
+                <p className="font-mono text-xs tracking-[0.2em] uppercase mb-4" style={{ color: PRIMARY }}>
                   Stay Connected
                 </p>
                 <h3 className="font-space text-2xl font-bold text-white leading-snug">
@@ -136,7 +140,7 @@ export default function Footer() {
                     borderRadius: "2px",
                     background: "rgba(255,255,255,0.04)",
                   }}
-                  onFocusCapture={e => (e.currentTarget.style.borderColor = "#5b7fff")}
+                  onFocusCapture={e => (e.currentTarget.style.borderColor = PRIMARY)}
                   onBlurCapture={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")}
                 >
                   <input
@@ -148,7 +152,7 @@ export default function Footer() {
                   />
                   <button
                     className="group flex items-center justify-center gap-2 px-5 py-3 font-space text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 shrink-0"
-                    style={{ background: "#5b7fff" }}
+                    style={{ background: `linear-gradient(135deg, ${PRIMARY} 0%, ${PRIMARY_LIGHT} 100%)` }}
                   >
                     <span>Subscribe</span>
                     <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -166,7 +170,7 @@ export default function Footer() {
         <div className="py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-white/5">
           <p className="font-inter text-xs text-white/40">
             © 2026{" "}
-            <span className="font-semibold" style={{ color: "#a5b8ff" }}>
+            <span className="font-semibold" style={{ color: PRIMARY }}>
               Simeozani Investments
             </span>
             . All rights reserved.
@@ -198,7 +202,7 @@ export default function Footer() {
               className="order-1 md:order-2 font-space font-black tracking-tighter uppercase text-center md:text-right"
               style={{
                 fontSize: "clamp(4rem, 12vw, 10rem)",
-                color: "#a5b8ff",
+                color: PRIMARY,
                 letterSpacing: "-0.03em",
               }}
             >

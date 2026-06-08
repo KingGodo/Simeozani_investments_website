@@ -30,7 +30,9 @@ const sectors = [
   },
 ];
 
-const PRIMARY = "#a5b8ff";
+// Brand blue
+const PRIMARY = "#0D47A1";
+const PRIMARY_LIGHT = "#4d7cc7";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -59,8 +61,8 @@ export default function BusinessAreas() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right center",
           backgroundSize: "auto 100%",
-          opacity: 0.45, // increased from 0.25
-          maskImage: "linear-gradient(to left, black 60%, transparent 95%)", // reveals more image
+          opacity: 0.45,
+          maskImage: "linear-gradient(to left, black 60%, transparent 95%)",
           WebkitMaskImage: "linear-gradient(to left, black 60%, transparent 95%)",
         }}
       />
@@ -70,9 +72,9 @@ export default function BusinessAreas() {
         className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/45 pointer-events-none"
       />
 
-      {/* ambient glow – very subtle */}
+      {/* ambient glow – using brand blue */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-40 right-0 w-[600px] h-[600px] rounded-full bg-[#5b7fff]/5 blur-[120px]" />
+        <div className="absolute top-40 right-0 w-[600px] h-[600px] rounded-full bg-[#0D47A1]/5 blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-14 lg:px-20 pt-32 pb-32">
@@ -130,15 +132,15 @@ export default function BusinessAreas() {
               >
                 {/* number with small connecting dot */}
                 <div className="relative flex items-center gap-4 md:w-32 shrink-0">
-                  <div className="w-3 h-3 rounded-full bg-white/20 group-hover:bg-[#a5b8ff] transition-colors duration-300 hidden md:block" />
-                  <span className="font-mono text-sm tracking-wider text-white/30 group-hover:text-[#a5b8ff] transition-colors duration-300">
+                  <div className="w-3 h-3 rounded-full bg-white/20 group-hover:bg-[#0D47A1] transition-colors duration-300 hidden md:block" />
+                  <span className="font-mono text-sm tracking-wider text-white/30 group-hover:text-[#0D47A1] transition-colors duration-300">
                     {sector.id}
                   </span>
                 </div>
 
                 {/* content */}
                 <div className="flex-1 space-y-2">
-                  <h3 className="font-bold text-2xl md:text-3xl text-white tracking-tight group-hover:text-[#a5b8ff] transition-colors duration-300">
+                  <h3 className="font-bold text-2xl md:text-3xl text-white tracking-tight group-hover:text-[#0D47A1] transition-colors duration-300">
                     {sector.title}
                   </h3>
                   <p className="text-white/35 text-sm leading-relaxed max-w-2xl font-light">

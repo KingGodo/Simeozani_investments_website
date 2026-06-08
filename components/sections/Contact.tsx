@@ -4,6 +4,10 @@ import { useRef, useState } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 
+// Brand blue
+const PRIMARY = "#0D47A1";
+const PRIMARY_LIGHT = "#4d7cc7";
+
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 36 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: "easeOut" } },
@@ -47,10 +51,10 @@ export default function Contact() {
       ref={sectionRef}
       className="relative w-full overflow-hidden bg-black"
     >
-      {/* Ambient glow */}
+      {/* Ambient glow – using brand blue */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-[#5b7fff]/5 blur-[120px]" />
-        <div className="absolute bottom-20 right-20 w-[400px] h-[400px] rounded-full bg-[#a5b8ff]/5 blur-[100px]" />
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-[#0D47A1]/5 blur-[120px]" />
+        <div className="absolute bottom-20 right-20 w-[400px] h-[400px] rounded-full bg-[#0D47A1]/5 blur-[100px]" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-8 md:px-14 lg:px-20 py-32">
@@ -63,7 +67,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-6">
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase" style={{ color: "#a5b8ff" }}>
+            <span className="font-mono text-[10px] tracking-[0.35em] uppercase" style={{ color: PRIMARY }}>
               Partner With Us
             </span>
           </motion.div>
@@ -75,7 +79,7 @@ export default function Contact() {
           >
             Let&apos;s build Africa&apos;s
             <br />
-            <span style={{ color: "#a5b8ff" }}>industrial future together.</span>
+            <span style={{ color: PRIMARY }}>industrial future together.</span>
           </motion.h2>
 
           <motion.p
@@ -106,7 +110,7 @@ export default function Contact() {
 
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <CheckCircle className="w-16 h-16 text-[#a5b8ff] mb-4" />
+                <CheckCircle className="w-16 h-16 text-[#0D47A1] mb-4" />
                 <p className="text-white/80 font-medium mb-2">Message sent successfully</p>
                 <p className="text-white/40 text-sm">We&apos;ll get back to you within 48 hours.</p>
               </div>
@@ -123,7 +127,7 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:border-[#a5b8ff] outline-none transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:border-[#0D47A1] outline-none transition-colors text-sm"
                     placeholder="John Ochieng"
                   />
                 </div>
@@ -139,7 +143,7 @@ export default function Contact() {
                     value={formState.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:border-[#a5b8ff] outline-none transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:border-[#0D47A1] outline-none transition-colors text-sm"
                     placeholder="hello@example.com"
                   />
                 </div>
@@ -155,7 +159,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:border-[#a5b8ff] outline-none transition-colors text-sm resize-none"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:border-[#0D47A1] outline-none transition-colors text-sm resize-none"
                     placeholder="Tell us about your investment opportunity, partnership proposal, or question..."
                   />
                 </div>
@@ -163,14 +167,18 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative overflow-hidden w-full bg-[#5b7fff] text-white font-semibold py-4 text-sm tracking-wide transition-all duration-300 hover:bg-[#4a6bdd] disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ borderRadius: "2px" }}
+                  className="group relative overflow-hidden w-full text-white font-semibold py-4 text-sm tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    background: `linear-gradient(135deg, ${PRIMARY} 0%, ${PRIMARY_LIGHT} 100%)`,
+                    borderRadius: "2px",
+                    boxShadow: "0 8px 20px -8px rgba(0,0,0,0.4)",
+                  }}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {isSubmitting ? "Sending..." : "Send Message"}
                     <Send size={14} className="group-hover:translate-x-1 transition-transform" />
                   </span>
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                 </button>
               </form>
             )}
@@ -195,12 +203,12 @@ export default function Contact() {
                   href="mailto:sikhutu@gmail.com"
                   className="flex items-start gap-4 group transition-colors duration-300 hover:bg-white/5 p-3 -mx-3 rounded-sm"
                 >
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#5b7fff]/10 text-[#a5b8ff] shrink-0">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0D47A1]/10 text-[#0D47A1] shrink-0">
                     <Mail size={18} />
                   </div>
                   <div>
                     <p className="font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase">Email</p>
-                    <p className="text-white/80 text-sm font-mono group-hover:text-[#a5b8ff] transition-colors">
+                    <p className="text-white/80 text-sm font-mono group-hover:text-[#0D47A1] transition-colors">
                       sikhutu@gmail.com
                     </p>
                   </div>
@@ -210,19 +218,19 @@ export default function Contact() {
                   href="tel:+263776778785"
                   className="flex items-start gap-4 group transition-colors duration-300 hover:bg-white/5 p-3 -mx-3 rounded-sm"
                 >
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#5b7fff]/10 text-[#a5b8ff] shrink-0">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0D47A1]/10 text-[#0D47A1] shrink-0">
                     <Phone size={18} />
                   </div>
                   <div>
                     <p className="font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase">Phone</p>
-                    <p className="text-white/80 text-sm font-mono group-hover:text-[#a5b8ff] transition-colors">
+                    <p className="text-white/80 text-sm font-mono group-hover:text-[#0D47A1] transition-colors">
                       +263 776 778 785
                     </p>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-4 p-3 -mx-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#5b7fff]/10 text-[#a5b8ff] shrink-0">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0D47A1]/10 text-[#0D47A1] shrink-0">
                     <MapPin size={18} />
                   </div>
                   <div>

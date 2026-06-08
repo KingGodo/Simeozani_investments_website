@@ -46,7 +46,8 @@ const focuses = [
   },
 ];
 
-const PRIMARY_COLOR = "#a5b8ff"; // unified blue accent
+// Brand blue
+const PRIMARY_COLOR = "#0D47A1";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -65,15 +66,15 @@ export default function StrategicFocus() {
   return (
     <section className="relative w-full overflow-hidden bg-black">
 
-      {/* AMBIENT BLOB – single color */}
+      {/* AMBIENT BLOB – using brand blue */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 60% 50% at 80% 40%, rgba(91,127,255,0.07) 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse 60% 50% at 80% 40%, rgba(13,71,161,0.07) 0%, transparent 70%)`,
         }}
       />
 
-      {/* Animated accent blob – always uses PRIMARY_COLOR */}
+      {/* Animated accent blob – brand blue */}
       <motion.div
         className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none blur-[120px]"
         animate={{ background: `${PRIMARY_COLOR}0d` }}
@@ -130,7 +131,7 @@ export default function StrategicFocus() {
                 className="group relative text-left flex items-center gap-5 py-5 transition-all duration-300"
                 style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
               >
-                {/* Active indicator bar – single color */}
+                {/* Active indicator bar – brand blue */}
                 <motion.div
                   className="absolute left-0 top-0 bottom-0 w-0.5"
                   animate={{
@@ -181,7 +182,7 @@ export default function StrategicFocus() {
             ))}
           </div>
 
-          {/* RIGHT — content panel with unified color */}
+          {/* RIGHT — content panel with brand blue accents */}
           <div className="lg:col-span-8 lg:sticky lg:top-32">
             <AnimatePresence mode="wait">
               <motion.div
@@ -239,7 +240,7 @@ export default function StrategicFocus() {
                   {current.body}
                 </p>
 
-                {/* Detail with left border */}
+                {/* Detail with left border – brand blue accent */}
                 <p
                   className="text-sm leading-[1.85] font-light pl-5 relative z-10"
                   style={{
@@ -250,7 +251,7 @@ export default function StrategicFocus() {
                   {current.detail}
                 </p>
 
-                {/* Stat pill – single color */}
+                {/* Stat pill – brand blue */}
                 <div
                   className="inline-flex items-center gap-5 self-start px-5 py-4 relative z-10"
                   style={{
@@ -270,7 +271,7 @@ export default function StrategicFocus() {
                   </span>
                 </div>
 
-                {/* Progress dots – single color */}
+                {/* Progress dots – brand blue */}
                 <div className="flex items-center gap-2 relative z-10">
                   {focuses.map((_, i) => (
                     <button

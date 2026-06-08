@@ -26,10 +26,14 @@ const pillars = [
     title: "Future Generations",
     subtitle: "Build what lasts – beyond quarterly earnings.",
     description:
-      "Our time horizon is measured in decades, not quarters. Every investment must prove its contribution to Africa&apos;s long‑term industrial base – environmental, social, and economic.",
+      "Our time horizon is measured in decades, not quarters. Every investment must prove its contribution to Africa's long‑term industrial base – environmental, social, and economic.",
     stat: { value: "15+", label: "minimum years value creation horizon" },
   },
 ];
+
+// Brand blue
+const PRIMARY = "#0D47A1";
+const PRIMARY_LIGHT = "#4d7cc7";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 36 },
@@ -58,10 +62,10 @@ export default function CommitmentAfrica() {
       {/* Darker Overlay – 95% black */}
       <div className="absolute inset-0 bg-black/95" />
 
-      {/* Ambient glow */}
+      {/* Ambient glow – using brand blue */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#a5b8ff]/5 blur-[100px]" />
-        <div className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full bg-[#5b7fff]/5 blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#0D47A1]/5 blur-[100px]" />
+        <div className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full bg-[#0D47A1]/5 blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-14 lg:px-20 pt-32 pb-32">
@@ -74,8 +78,8 @@ export default function CommitmentAfrica() {
           className="mb-20"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-            <div className="h-px w-7" style={{ background: "#5b7fff" }} />
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase" style={{ color: "#a5b8ff" }}>
+            <div className="h-px w-7" style={{ background: PRIMARY }} />
+            <span className="font-mono text-[10px] tracking-[0.35em] uppercase" style={{ color: PRIMARY }}>
               Commitment to Africa
             </span>
           </motion.div>
@@ -88,7 +92,7 @@ export default function CommitmentAfrica() {
             >
               We are not visitors.
               <br />
-              <span style={{ color: "#a5b8ff" }}>We are builders of Africa.</span>
+              <span style={{ color: PRIMARY }}>We are builders of Africa.</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -120,7 +124,7 @@ export default function CommitmentAfrica() {
               )}
 
               {/* Number */}
-              <span className="font-mono text-xs tracking-[0.2em] text-[#a5b8ff]/50">
+              <span className="font-mono text-xs tracking-[0.2em] text-[#0D47A1]/50">
                 {pillar.id}
               </span>
 
@@ -130,7 +134,7 @@ export default function CommitmentAfrica() {
               </h3>
 
               {/* Subtitle / phrase */}
-              <p className="text-[#a5b8ff]/80 text-sm italic font-light leading-relaxed border-l-2 pl-3" style={{ borderLeftColor: "#a5b8ff" }}>
+              <p className="text-[#0D47A1]/80 text-sm italic font-light leading-relaxed border-l-2 pl-3" style={{ borderLeftColor: PRIMARY }}>
                 “{pillar.subtitle}”
               </p>
 
@@ -141,7 +145,7 @@ export default function CommitmentAfrica() {
 
               {/* Stat */}
               <div className="flex items-baseline gap-2 pt-3 mt-auto">
-                <span className="font-bold text-2xl tracking-tight" style={{ color: "#a5b8ff" }}>
+                <span className="font-bold text-2xl tracking-tight" style={{ color: PRIMARY }}>
                   {pillar.stat.value}
                 </span>
                 <span className="font-mono text-[10px] tracking-[0.12em] text-white/35 uppercase">
@@ -152,7 +156,7 @@ export default function CommitmentAfrica() {
           ))}
         </motion.div>
 
-        {/* QUOTE / MANIFESTO BLOCK – with subtle glow */}
+        {/* QUOTE / MANIFESTO BLOCK – with subtle glow using brand blue */}
         <motion.div
           ref={bottomRef}
           initial={{ opacity: 0, y: 30 }}
@@ -162,7 +166,7 @@ export default function CommitmentAfrica() {
         >
           <div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none"
-            style={{ background: "radial-gradient(circle, rgba(91,127,255,0.15) 0%, transparent 70%)" }}
+            style={{ background: `radial-gradient(circle, ${PRIMARY}15 0%, transparent 70%)` }}
           />
 
           <div className="relative max-w-3xl mx-auto space-y-6">
@@ -183,7 +187,7 @@ export default function CommitmentAfrica() {
             <div className="pt-6">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-white/50 hover:text-[#a5b8ff] transition-colors duration-300 group"
+                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-white/50 hover:text-[#0D47A1] transition-colors duration-300 group"
               >
                 Partner with us
                 <svg

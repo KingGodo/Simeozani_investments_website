@@ -60,6 +60,9 @@ const principles = [
   },
 ];
 
+// Brand blue
+const PRIMARY = "#0D47A1";
+
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
@@ -81,9 +84,9 @@ export default function LeadershipPhilosophy() {
 
   return (
     <section className="relative w-full overflow-hidden bg-black">
-      {/* Ambient glow */}
+      {/* Ambient glow – using brand blue */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[#5b7fff]/5 blur-[120px]" />
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[#0D47A1]/5 blur-[120px]" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-8 md:px-14 lg:px-20 py-32">
@@ -97,8 +100,8 @@ export default function LeadershipPhilosophy() {
           className="mb-20"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-            <div className="h-px w-7" style={{ background: "#5b7fff" }} />
-            <span className="font-mono text-[10px] tracking-[0.35em] uppercase" style={{ color: "#a5b8ff" }}>
+            <div className="h-px w-7" style={{ background: PRIMARY }} />
+            <span className="font-mono text-[10px] tracking-[0.35em] uppercase" style={{ color: PRIMARY }}>
               Leadership Philosophy
             </span>
           </motion.div>
@@ -110,7 +113,7 @@ export default function LeadershipPhilosophy() {
               style={{ fontSize: "clamp(2.2rem, 4.5vw, 4rem)" }}
             >
               Guiding{" "}
-              <span style={{ color: "#a5b8ff" }}>principles</span>
+              <span style={{ color: PRIMARY }}>principles</span>
               <br />of a Pan‑African enterprise.
             </motion.h2>
             <motion.p
@@ -135,16 +138,16 @@ export default function LeadershipPhilosophy() {
             <motion.div
               key={p.id}
               variants={fadeUp}
-              className="group relative flex flex-col gap-5 p-8 bg-black transition-all duration-500 hover:bg-[rgba(91,127,255,0.04)]"
+              className="group relative flex flex-col gap-5 p-8 bg-black transition-all duration-500 hover:bg-[rgba(13,71,161,0.04)]"
             >
-              {/* Top accent line on hover */}
+              {/* Top accent line on hover – using brand blue */}
               <div
                 className="absolute top-0 left-0 right-0 h-px transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                style={{ background: "linear-gradient(90deg, #5b7fff, transparent)" }}
+                style={{ background: `linear-gradient(90deg, ${PRIMARY}, transparent)` }}
               />
 
               <div className="flex items-start justify-between">
-                <div className="w-10 h-10 text-[#a5b8ff] opacity-70">{p.icon}</div>
+                <div className="w-10 h-10 text-[#0D47A1] opacity-70">{p.icon}</div>
                 <span className="font-mono text-[11px] tracking-wide text-white/20">{p.id}</span>
               </div>
 
@@ -160,7 +163,7 @@ export default function LeadershipPhilosophy() {
               </p>
 
               {/* Bottom arrow on hover */}
-              <div className="flex items-center gap-2 text-white/20 group-hover:text-[#a5b8ff] transition-colors duration-300 mt-2">
+              <div className="flex items-center gap-2 text-white/20 group-hover:text-[#0D47A1] transition-colors duration-300 mt-2">
                 <span className="font-mono text-[9px] tracking-[0.2em] uppercase">Core tenet</span>
                 <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -170,7 +173,7 @@ export default function LeadershipPhilosophy() {
           ))}
         </motion.div>
 
-        {/* ── RESILIENCE QUOTE (no borders, only background gradient) ── */}
+        {/* ── RESILIENCE QUOTE (no borders, only background gradient with brand blue) ── */}
         <motion.div
           ref={quoteRef}
           initial={{ opacity: 0, y: 30 }}
@@ -178,7 +181,7 @@ export default function LeadershipPhilosophy() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative py-14 px-6 md:px-12 text-center"
           style={{
-            background: "linear-gradient(90deg, transparent, rgba(91,127,255,0.05), transparent)",
+            background: `linear-gradient(90deg, transparent, ${PRIMARY}0a, transparent)`,
           }}
         >
           <span className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase block mb-6">
