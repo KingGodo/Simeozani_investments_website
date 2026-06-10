@@ -20,9 +20,9 @@ export default function About() {
     const ctx = gsap.context(() => {
       // Brand name animation
       gsap.fromTo(headlineRef.current,
-        { letterSpacing: "0.1em", scale: 0.95 },
+        { letterSpacing: "0.05em", scale: 0.95 },
         {
-          letterSpacing: "0.3em",
+          letterSpacing: "0.2em",
           scale: 1,
           duration: 1.2,
           ease: "power2.out",
@@ -98,29 +98,35 @@ export default function About() {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/70 pointer-events-none" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 md:px-14 lg:px-20 py-12 md:py-16">
-        
-        {/* Brand headline */}
-        <div ref={headlineRef} className="w-full text-center mb-12 md:mb-16 overflow-x-auto overflow-y-visible">
+
+        {/* Brand headline — fully fluid, no overflow scroll */}
+        <div ref={headlineRef} className="w-full text-center mb-12 md:mb-16">
           <span
-            className="font-black uppercase whitespace-nowrap inline-block"
+            className="font-black uppercase inline-block w-full"
             style={{
-              fontSize: "clamp(3rem, 14vw, 10rem)",
+              /*
+               * clamp floor raised to 2rem so it never clips on tiny screens.
+               * 11.5vw hits ~10rem at 1400px and scales down cleanly.
+               * No whitespace-nowrap — the word can reflow if the viewport
+               * is extremely narrow, but with this clamp it won't need to.
+               */
+              fontSize: "clamp(2rem, 11.5vw, 10rem)",
               color: "white",
               letterSpacing: "0.1em",
-              display: "inline-block",
+              lineHeight: 1.05,
             }}
           >
             SIMEOZANI
           </span>
         </div>
 
-        {/* Stats + Manifesto – Stats narrower (1/3), manifesto wider (2/3) */}
+        {/* Stats + Manifesto */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-16 md:mb-24">
-          {/* Stats column – 1/3 width */}
+          {/* Stats column */}
           <div className="lg:col-span-1">
             <div ref={statsContainerRef} className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-1 gap-2">
               {[
-                { label: "Founded", value: "2009" },
+                { label: "Founded", value: "2022" },
                 { label: "Nations", value: "12" },
                 { label: "Sectors", value: "5" },
                 { label: "Focus", value: "Africa" },
@@ -137,12 +143,12 @@ export default function About() {
             </div>
           </div>
 
-          {/* Manifesto column – 2/3 width */}
+          {/* Manifesto column */}
           <div className="lg:col-span-2">
             <div ref={manifestoRef} className="space-y-6">
               <p className="text-white text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight">
-                We do not merely <span className="text-[#0D47A1]">invest</span> in Africa.<br />
-                We build <span className="text-[#0D47A1]">the foundations</span> it stands on.
+                We do not merely <span style={{ color: PRIMARY }}>invest</span> in Africa.<br />
+                We build <span style={{ color: PRIMARY }}>the foundations</span> it stands on.
               </p>
               <div className="w-12 h-px bg-white/20" />
               <div className="space-y-5 text-sm md:text-base text-white/60 leading-relaxed">
@@ -157,7 +163,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Pillars (compact) */}
+        {/* Pillars */}
         <div className="mt-12 md:mt-16">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-7" style={{ background: PRIMARY }} />
