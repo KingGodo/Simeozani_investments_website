@@ -23,6 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Simeozani Investments",
   description: "Transforming Africa Through Strategic Investment – Excellence Beyond Investment",
+  verification: {
+    google: "DOjAQ3OvEzxv9edupm9mXhrkwc3FckCC2LFK18SrqWc",
+  },
 };
 
 export default function RootLayout({
